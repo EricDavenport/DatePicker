@@ -26,6 +26,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2K-T3-98a">
                                 <rect key="frame" x="163" y="596" width="88" height="30"/>
                                 <state key="normal" title="Create Event"/>
+                                <connections>
+                                    <segue destination="Qgd-mx-K6p" kind="show" id="kN1-w5-Lvk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSVP NO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgg-hS-Wjg">
                                 <rect key="frame" x="171" y="634" width="72" height="21"/>
@@ -68,18 +71,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbH-db-UAB">
-                                <rect key="frame" x="183" y="487" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbH-db-UAB">
+                                <rect key="frame" x="182.5" y="478.5" width="51" height="31"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The event is set for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ci-GM-5HX">
+                                <rect key="frame" x="101" y="340" width="212" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxF-GH-6ci">
+                                <rect key="frame" x="161.5" y="549.5" width="91" height="30"/>
+                                <state key="normal" title="Submit RSVP"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzR-jr-NTk">
+                                <rect key="frame" x="155" y="377" width="104" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="xbH-db-UAB" firstAttribute="top" secondItem="DvY-G5-xG0" secondAttribute="bottom" constant="20" id="1Kb-Tj-5ff"/>
+                            <constraint firstItem="DvY-G5-xG0" firstAttribute="top" secondItem="pzR-jr-NTk" secondAttribute="bottom" constant="40" id="1NC-KK-rUC"/>
                             <constraint firstItem="DvY-G5-xG0" firstAttribute="centerX" secondItem="27K-kI-InG" secondAttribute="centerX" id="5Me-XL-aqR"/>
+                            <constraint firstItem="vxF-GH-6ci" firstAttribute="top" secondItem="xbH-db-UAB" secondAttribute="bottom" constant="40" id="6Qz-AS-gQc"/>
+                            <constraint firstItem="xbH-db-UAB" firstAttribute="centerX" secondItem="27K-kI-InG" secondAttribute="centerX" id="CbR-4H-lB9"/>
+                            <constraint firstItem="pzR-jr-NTk" firstAttribute="centerX" secondItem="27K-kI-InG" secondAttribute="centerX" id="PSe-cE-GEq"/>
+                            <constraint firstItem="vxF-GH-6ci" firstAttribute="centerX" secondItem="27K-kI-InG" secondAttribute="centerX" id="Sp2-gO-31G"/>
+                            <constraint firstItem="pzR-jr-NTk" firstAttribute="top" secondItem="8ci-GM-5HX" secondAttribute="bottom" constant="8" id="XAE-6y-HQE"/>
                             <constraint firstItem="DvY-G5-xG0" firstAttribute="centerY" secondItem="27K-kI-InG" secondAttribute="centerY" id="njQ-BY-kxf"/>
+                            <constraint firstItem="8ci-GM-5HX" firstAttribute="centerX" secondItem="27K-kI-InG" secondAttribute="centerX" id="u79-DZ-Lhp"/>
+                            <constraint firstItem="pzR-jr-NTk" firstAttribute="centerX" secondItem="27K-kI-InG" secondAttribute="centerX" id="v5d-xq-6Xk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fej-t7-j1T"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4nG-gy-Irn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0w-63-N2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
