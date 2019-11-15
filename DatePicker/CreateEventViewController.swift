@@ -19,6 +19,7 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var rsvpLabel: UILabel!
     
     var event: Event! {
+        // didSet is called when property is set/assigned a new value - pressing enter after changing(pressing RSCP to event on screen
         didSet { // property observer, gets called when the property changes
                  //         update UI whenever the event changes
             if event.willAttend {
@@ -51,6 +52,9 @@ class CreateEventViewController: UIViewController {
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         event.date = sender.date
     }
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("prepare for(segue: )")
         // here is where we want to setup and pas event data to the detail view controller
@@ -59,14 +63,42 @@ class CreateEventViewController: UIViewController {
         //          is where we sr tanditioning to
         // segue.source is where the segue is coming from
         // segue.destination is where the segue is going
-        //       let detailViewController = segue.description   // detailViewController is a UIViewco troller
+        //       let detailViewController = segue.description   // detailViewController is a UIViewcontroller
         
         guard let detailViewController = segue.destination as? DetailViewController else {
             return
             }
         // we could set the event on the detail view controller
-        detailViewController.event = event
+        detailViewController.event = event         // .event is variable created in DetailViewCOntroller class,,swift file
         }
+    
+    // unwind segue action
+    // need to create an @IBAction for unwind segue
+    // we need to commect th ecation buttom from th esource view
+    // controller tyo this unwind segue action
+    
+    // unwind segue required to have parameter of type UIStoryboardSegue in
+    // the unind segue action
+    // why: this is the only way interface builder can recognize an unwind segue to connect to
+    // MARK: - UNWIND SEGUE STEPS
+    //  unwind segue - returning from a source view controller regular segue is ViewController A > ViewController B - unwind is B > A
+    // 1. write an @IBAction func
+    // 2. a UIStoryboard parameter is required
+    // 3. type casrt and get access to the source view controller  (degue.source)
+    // 4. setup ui accordingly --> see var event: Event! = detailsViewController.vent, didSet{...} on event property above^^^
+    // 5. in storyboard control-drag action buttin to "exit" icon in the source view controller and select e.g this methos (uppdateUIFromUnwindSegue below)
+    @IBAction func updateUIFromUnwindSegue(segue: UIStoryboardSegue) {
+        // we need acess to the source destination view controller
+        guard let detailsViewController = segue.source as? DetailViewController else {
+            return  // more on refactoring to fatalError() later
+        }
+        
+        event = detailsViewController.event
+        
+        
+    }
+    
+    
         
     }
     

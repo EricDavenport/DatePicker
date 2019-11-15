@@ -82,6 +82,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbH-db-UAB">
                                 <rect key="frame" x="182.5" y="478.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="rsvpCHANGED2:" destination="Qgd-mx-K6p" eventType="valueChanged" id="t14-MC-pMf"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The event is set for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ci-GM-5HX">
                                 <rect key="frame" x="101" y="340" width="212" height="29"/>
@@ -89,11 +92,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxF-GH-6ci">
-                                <rect key="frame" x="161.5" y="549.5" width="91" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxF-GH-6ci">
+                                <rect key="frame" x="162.5" y="549.5" width="91" height="30"/>
                                 <state key="normal" title="Submit RSVP"/>
                                 <connections>
-                                    <action selector="rsvpChanged:" destination="Qgd-mx-K6p" eventType="touchUpInside" id="jE1-Q8-eWE"/>
+                                    <segue destination="VLl-hs-mtv" kind="unwind" unwindAction="updateUIFromUnwindSegueWithSegue:" id="a4E-dm-1Bw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzR-jr-NTk">
@@ -127,6 +130,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0w-63-N2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="VLl-hs-mtv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1844.9275362318842" y="126.5625"/>
         </scene>

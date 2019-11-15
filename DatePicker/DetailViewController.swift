@@ -17,11 +17,13 @@ class DetailViewController: UIViewController {
     // ned objext from source view controller
     //we need (object)
     
+    // event is of type Event? -- passed from CreateEventViewController
     var event: Event? // default value nil
     
     // DateFormatter will help ud format the date object in a more readable
     //              format
-    // lazy variable - a variable that gets created the firsty time its needed
+    // lazy variable - a variable that gets created the first time its needed
+    //                  niot loaded as class comes on screen - only when called
     lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM d, yyyy h:mm a"  // .dateFormat we have more flexibility 
@@ -52,9 +54,14 @@ func UpdateUI() {
     messageLabel.text = event?.name ?? "Event name not available"
     
 }
+   
     
-    @IBAction func rsvpChanged(_ sender: UIButton) {
+    @IBAction func rsvpCHANGED2(_ sender: UISwitch) {
+        event?.willAttend = sender.isOn
     }
+    
+    
+    
     
     
 }
