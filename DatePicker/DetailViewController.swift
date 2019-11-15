@@ -55,7 +55,7 @@ func UpdateUI() {
     
 }
    
-    
+    // called when switch is used toggling makes event change - calling didSet when RSVP changed button is pressed
     @IBAction func rsvpCHANGED2(_ sender: UISwitch) {
         event?.willAttend = sender.isOn
     }

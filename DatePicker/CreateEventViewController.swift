@@ -94,7 +94,9 @@ class CreateEventViewController: UIViewController {
         }
         
         event = detailsViewController.event
-        
+        // after even is set here, didSet{...} on event property gets caled
+        // and the UI (User interface) is updated
+        // UI elements that gets updated are the rsvpLabel's text and the createEventButton's titleLabel
         
     }
     
